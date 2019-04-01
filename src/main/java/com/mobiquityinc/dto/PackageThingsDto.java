@@ -3,8 +3,9 @@ package com.mobiquityinc.dto;
 public class PackageThingsDto {
 
     private int indexNo;
-    private int weight;
+    private double weight;
     private double price;
+    private String currency;
 
     public int getIndexNo() {
         return indexNo;
@@ -14,11 +15,11 @@ public class PackageThingsDto {
         this.indexNo = indexNo;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(final int weight) {
+    public void setWeight(final double weight) {
         this.weight = weight;
     }
 
@@ -28,5 +29,13 @@ public class PackageThingsDto {
 
     public void setPrice(final double price) {
         this.price = price;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(final String currency) {
+        this.currency = currency;
     }
 }
