@@ -6,7 +6,8 @@ public class PackerTest {
 
     @Test
     public void testPack(){
-        Packer.pack("C:\\AAA\\Code\\DO\\Packer\\packages.txt");
+        String results = Packer.pack("C:\\AAA\\Code\\DO\\Packer\\packages.txt");
+        System.out.println(results);
     }
 
 }

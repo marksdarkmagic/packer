@@ -1,6 +1,7 @@
 package com.mobiquityinc.common;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -27,12 +28,15 @@ public class InputConverter {
             PackageThingsDto thingDto = new PackageThingsDto();
             String[] thingDetail = thing.split(",");
             thingDto.setIndexNo(Integer.parseInt(thingDetail[0]));
-            thingDto.setWeight(Double.parseDouble(thingDetail[1]));
+            String[] itemWeight = thingDetail[1].split("\\.");
+            String newItemWeight = itemWeight[0] + (itemWeight[1].length() < 2 ? itemWeight[1]+"0" : itemWeight[1]);
+            thingDto.setWeight(Integer.parseInt(newItemWeight));
             String price = thingDetail[2];
             thingDto.setCurrency(price.substring(0,1));
-            thingDto.setPrice(Double.parseDouble(price.substring(1,price.length())));
+            thingDto.setPrice(Integer.parseInt(price.substring(1,price.length())));
             response.add(thingDto);
         }
+        Collections.sort(response,new SortByWeight());
         return response;
     }
 
@@ -44,7 +48,7 @@ public class InputConverter {
             String weight = matcher.group();
             response = Integer.parseInt(weight.substring(0,weight.indexOf(':')).trim());
         }
-        return response;
+        return response*100;
     }
 
     private static List<String> extractThings(String validInputLine){
