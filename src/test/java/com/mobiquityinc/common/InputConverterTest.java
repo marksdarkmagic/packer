@@ -11,7 +11,7 @@ public class InputConverterTest {
     public void inputConverterTest(){
         PackageDto packageDto = InputConverter.convertIntoPackageDto("81 : (1,53.38,€45) (2,88.62,€98)");
         assertTrue(packageDto.getPackageThings().size() == 2);
-        assertTrue(packageDto.getWeightLimit() == 81);
+        assertTrue(packageDto.getWeightLimit() == 8100);
     }
 
 }
