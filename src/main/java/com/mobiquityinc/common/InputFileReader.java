@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.mobiquityinc.exception.APIException;
 
+/*this is just a class to read in a file and populates the text lines in the file into a list of strings*/
 public class InputFileReader {
 
     public static List<String> readInputFile(String filePath){

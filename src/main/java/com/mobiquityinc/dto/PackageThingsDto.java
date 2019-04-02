@@ -1,5 +1,6 @@
 package com.mobiquityinc.dto;
 
+/*this DTO is what things there are to put in the box.*/
 public class PackageThingsDto {
 
     private int indexNo;

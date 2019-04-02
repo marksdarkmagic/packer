@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 import com.mobiquityinc.dto.PackageThingsDto;
 
+/*created this comparator to sort the packages by weight in order to pick a lighter object if the value is the same*/
 public class SortByWeight implements Comparator<PackageThingsDto> {
 
     @Override

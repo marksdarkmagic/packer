@@ -5,7 +5,8 @@ import java.util.Collections;
 import java.util.List;
 
 import com.mobiquityinc.common.SortByIndexNo;
-
+/*this DTO represents the box. its got the weight limit and stuff you can put inside called packageThings
+* this is used to represent the input and then later the solution*/
 public class PackageDto {
 
     private int weightLimit;
@@ -33,6 +34,8 @@ public class PackageDto {
         return packageThings;
     }
 
+
+    /*I did this to make it easy to print the index numbers with commas*/
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

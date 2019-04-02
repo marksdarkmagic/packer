@@ -12,7 +12,8 @@ import com.mobiquityinc.exception.APIException;
 
 public class Packer {
 
-
+    /*this method reads a file in. It validates the input. It then converts the string into objects.
+      it then does the calculation to pack the box and returns the index number of the items taken*/
     public static String pack(String filePath) throws APIException {
         StringBuilder sb = new StringBuilder();
         List<PackageDto> packageDtoList = readAndExtractDataToPack(filePath);
@@ -25,6 +26,7 @@ public class Packer {
         return sb.toString();
     }
 
+    /*this is to read in the file and then validate if the input is correct if the input is incorrect it throws an APIException*/
     private static List<PackageDto> readAndExtractDataToPack(String filePath){
         List<PackageDto> response = new ArrayList<>();
         List<String> inputStringList  = InputFileReader.readInputFile(filePath);
@@ -41,6 +43,7 @@ public class Packer {
         return response;
     }
 
+    /*this does the calculation to find the highest value of items to put in the box without exceeding the box weight limit*/
     private static PackageDto calc(PackageThingsDto[] items,int capacity) {
         int NB_ITEMS = items.length;
         // we use a matrix to store the max value at each n-th item

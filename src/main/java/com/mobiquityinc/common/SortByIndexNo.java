@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 import com.mobiquityinc.dto.PackageThingsDto;
 
+/*created this comparator to sort the index in order for the output to be in ascending order*/
 public class SortByIndexNo implements Comparator<PackageThingsDto> {
 
     @Override
